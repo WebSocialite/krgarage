@@ -1,10 +1,7 @@
-console.log("EXECUTED");
+                             //  moduleJS  =>  import moment from "moment";   
+                              // commonJS => const moment = require('moment');
+import dotenv from 'dotenv';
+dotenv.config();
 
-import moment from "moment";
-
-
-const currentTime = moment().format("YY MM DD");
-console.log(currentTime);
-
-const person: string = "Martin";
-const count: number = 100;
+console.log("PORT:", process.env.PORT);
+console.log("MONGO_URL:", process.env.MONGO_URL);
