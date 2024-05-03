@@ -1,0 +1,24 @@
+{    
+
+    /**    package.json degi build: tsc  ni vazifasi 
+           from  TYPESCRIPT => JAVASCRIPT tranlate qladi
+    **/
+
+
+
+    "compilerOptions": {
+        "target": "ES2020",
+        "module": "commonjs",
+        "outDir": "./dist",       // folder name 
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "baseUrl": "./",
+        "paths": {
+            "*": ["node_modules/*"]
+        }
+    },
+    "include": ["src/**/*.ts"],
+    "exclude": ["node_modules"]
+}
