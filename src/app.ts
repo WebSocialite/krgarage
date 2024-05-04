@@ -1,5 +1,6 @@
 import express from "express"; // express is divided into 4 parts
 import path from "path";
+import router from "./router";
 /** 1. ENTRANCE */
 const app = express();
 console.log(__dirname);
@@ -16,6 +17,6 @@ app.set('views', path.join(__dirname, "views"));
 app.set("view engine", "ejs"); //telling that our engine is EJS
 
 /** 4. ROUTERS */
-
+app.use('/', router);  // middleware design pattern
 
 export default app;    //module exports
