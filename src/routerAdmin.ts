@@ -8,7 +8,6 @@ routerAdmin.get('/', adminController.goHome);
 
 routerAdmin.get('/login', adminController.getLogin);
 
-
 routerAdmin.get('/signup', adminController.getSignup);
 
 export default routerAdmin;
