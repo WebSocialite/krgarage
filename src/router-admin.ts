@@ -10,7 +10,7 @@ routerAdmin
     .post('/login', adminController.processLogin);
 routerAdmin
     .get('/signup', adminController.getSignup)
-    .post('.signup', adminController.processSignup)
+    .post('/signup', adminController.processSignup)
 // PRODUCT
 
 
