@@ -1,7 +1,9 @@
 import express from "express"; // express is divided into 4 parts
 import path from "path";
 import router from "./router";
-import routerAdmin from "./routerAdmin";
+import routerAdmin from "./router-admin";
+import morgan from "morgan";
+import { MORGAN_FORMAT } from "./libs/config";
 
 /** 1. ENTRANCE */
 const app = express();
@@ -9,7 +11,7 @@ console.log(__dirname);
 app.use(express.static(path.join(__dirname, 'public'))); //giving access to public folder
 app.use(express.urlencoded({extended: true})); // giving access
 app.use(express.json()); // letting upcoming json data in
-
+app.use(morgan(MORGAN_FORMAT));
 
 /** 2. SESSIONS */
 
