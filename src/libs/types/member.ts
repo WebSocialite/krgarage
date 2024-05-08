@@ -31,11 +31,11 @@ export interface MemberInput {
     memberPoints?: number;
 }
 
-// export interface LoginInput {
-//     memberNick: string;
-//     memberPassword: string;
+export interface LoginInput {
+    memberNick: string;
+    memberPassword: string;
     
-// }
+}
 
 // export interface MemberUpdateInput {
 //     _id: ObjectId;
