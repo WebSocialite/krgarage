@@ -5,6 +5,8 @@ import MemberService from "../models/Member.service";
 import { LoginInput, MemberInput } from "../libs/types/member";
 import { MemberType } from "../libs/enums/member.enum";
 
+const memberService = new MemberService();
+
 const adminController: T = {};
 
 adminController.goHome = (req: Request, res: Response ) => {
@@ -35,31 +37,12 @@ adminController.getSignup = (req: Request, res: Response ) => {
     }    
 };
 
-adminController.processLogin = async (req: Request, res: Response ) => {
-    try {
-        console.log("processLogin");
-        console.log("body:", req.body);
-        const input: LoginInput =req.body;
-
-        const memberService = new MemberService();
-        memberService.processLogin(input);
-        const result = await memberService.processLogin(input);
-        res.send(result);
-    }catch (err) {
-        console.log("Error, processLogin:", err );
-        res.send(err);
-    }    
-};
-
 adminController.processSignup = async (req: Request, res: Response ) => {
     try {
         console.log("processSignup");
-        console.log("body:", req.body);
 
         const newMember: MemberInput = req.body;
-        newMember.memberType = MemberType.ADMIN
-
-        const memberService = new MemberService();
+        newMember.memberType = MemberType.ADMIN;
         const result = await memberService.processSignup(newMember);
         res.send(result);
     } catch (err) {
@@ -67,5 +50,19 @@ adminController.processSignup = async (req: Request, res: Response ) => {
         res.send(err);
     }    
 };
+adminController.processLogin = async (req: Request, res: Response ) => {
+    try {
+        console.log("processLogin");
+        const input: LoginInput =req.body,
+        result = await memberService.processLogin(input);
+        
+        res.send(result);
+    }catch (err) {
+        console.log("Error, processLogin:", err );
+        res.send(err);
+    }    
+};
+
+
 
 export default adminController;
