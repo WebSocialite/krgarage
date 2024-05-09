@@ -17,7 +17,7 @@ app.use(morgan(MORGAN_FORMAT));
 
 
 /** 3. VIEWS */
-app.set('views', path.join(__dirname, "views"));
+app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs"); //telling that our engine is EJS
 
 /** 4. ROUTERS */
