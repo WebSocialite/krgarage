@@ -10,7 +10,7 @@ import ConnectMongoDB from "connect-mongodb-session";
 const MongoDBStore = ConnectMongoDB(session);
 const store = new MongoDBStore({
     uri: String(process.env.MONGO_URL),
-    collection: "session",
+    collection: "sessions",
 
 });
 
@@ -27,7 +27,7 @@ app.use(
     session({
         secret: String(process.env.SESSION_SECRET),
         cookie: {
-            maxAge: 1000 * 3600 * 3, //3h 
+            maxAge: 1000 * 3600 * 3, //3h cookie yashash muddati
         },
         store: store,
         resave: true, // if false 10:00 => 13:00 no matter what it will kill session on browser
