@@ -30,7 +30,7 @@ app.use(
             maxAge: 1000 * 3600 * 3, //3h 
         },
         store: store,
-        resave: true,
+        resave: true, // if false 10:00 => 13:00 no matter what it will kill session on browser
         saveUninitialized: true 
     })
 );
