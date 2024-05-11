@@ -30,6 +30,7 @@ productController.updateChosenProduct);
 // USER 
 
 routerAdmin.get("/user/all", adminController.verifyAdmin, adminController.getUsers)
+routerAdmin.get("/user/edit", adminController.verifyAdmin, adminController.updateChosenUser)
 
 
 export default routerAdmin;

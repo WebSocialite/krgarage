@@ -37,16 +37,16 @@ export interface LoginInput {
     
 }
 
-// export interface MemberUpdateInput {
-//     _id: ObjectId;
-//     memberStatus?: MemberStatus;
-//     memberNick?: String;
-//     memberPhone?: string;
-//     memberPassword?: string;
-//     memberAddress?: string;
-//     memberDesc?: string;
-//     memberImage?: string;
-// }
+export interface MemberUpdateInput {
+    _id: ObjectId;
+    memberStatus?: MemberStatus;
+    memberNick?: String;
+    memberPhone?: string;
+    memberPassword?: string;
+    memberAddress?: string;
+    memberDesc?: string;
+    memberImage?: string;
+}
 
 // export interface ExtendedRequest extends Request {
 //     member: Member;
