@@ -41,21 +41,6 @@ adminController.getLogin = (req: Request, res: Response ) => {
     }
 };
 
-adminController.logout = async (
-    req: AdminRequest, 
-    res: Response) => {
-    try {
-        console.log('logout');
-        req.session.destroy(function() {
-            res.redirect("/admin"); // logout bolganda main page ga redirect qladi
-        })
-
-    } catch (err) {
-        console.log("Error, logout:", err);
-        res.redirect("/admin");
-    }
-};
-
 adminController.processSignup = async (req: AdminRequest, res: Response) => {
     try {
       console.log("processSignup");
@@ -99,6 +84,43 @@ adminController.processLogin = async (req: AdminRequest, res: Response ) => {
     );
     }    
 };
+
+adminController.logout = async (
+    req: AdminRequest, 
+    res: Response) => {
+    try {
+        console.log('logout');
+        req.session.destroy(function() {
+            res.redirect("/admin"); // logout bolganda main page ga redirect qladi
+        })
+
+    } catch (err) {
+        console.log("Error, logout:", err);
+        res.redirect("/admin");
+    }
+};
+
+adminController.getUsers = async (req: Request, res: Response ) => {
+    try {
+        console.log("getUsers");
+        const result = await memberService.getUsers();
+
+        res.render("users", { user: result });
+    }catch (err) {
+        console.log("Error, getUsers:", err );
+        res.redirect("/admin/login");
+    }
+};
+
+
+adminController.updateChosenUser = (req: Request, res: Response ) => {
+    try {
+        console.log("updateChosenUser");
+    }catch (err) {
+        console.log("Error, updateChosenUser:", err );
+    }
+};
+
 adminController.checkAuthSession = async(
     req: AdminRequest, res: Response) => {
     try {
