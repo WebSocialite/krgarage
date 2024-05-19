@@ -22,7 +22,6 @@ routerAdmin.get("/check-me", adminController.checkAuthSession);
 routerAdmin.get("/product/all", adminController.verifyAdmin, 
 productController.getAllProducts);
 routerAdmin.post("/product/create", adminController.verifyAdmin,
-// uploadProductImage.single("productImage"),
 makeUploader("products").array("productImages", 5),  // maximum 5 file upload is possible
 productController.createNewProduct);
 routerAdmin.post("/product/:id", adminController.verifyAdmin,
@@ -30,7 +29,7 @@ productController.updateChosenProduct);
 // USER 
 
 routerAdmin.get("/user/all", adminController.verifyAdmin, adminController.getUsers)
-routerAdmin.get("/user/edit", adminController.verifyAdmin, adminController.updateChosenUser)
+routerAdmin.post("/user/edit", adminController.verifyAdmin, adminController.updateChosenUser)
 
 
 export default routerAdmin;

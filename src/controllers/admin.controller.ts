@@ -80,7 +80,7 @@ adminController.processLogin = async (req: AdminRequest, res: Response ) => {
         const message = 
         err instanceof Errors ? err.message : Message.SOMETHING_WENT_WRONG;
       res.send(
-        `<script> alert ("${message}"); window.location.replace('admin/login')</script>`
+        `<script> alert ("${message}"); window.location.replace('/admin/login')</script>`
     );
     }    
 };
@@ -139,7 +139,7 @@ adminController.checkAuthSession = async(
     }
 };
 
-adminController.verifyRestaurant = (
+adminController.verifyAdmin = (
     req: AdminRequest, 
     res: Response, 
     next: NextFunction

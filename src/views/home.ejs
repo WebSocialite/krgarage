@@ -1,7 +1,48 @@
 <%- include('includes/header') %>
 
-  <body>
-    <div>TEST</div>
+<link rel="stylesheet" type="text/css" href="/css/home.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.js"></script>
+
+<body>
+
+        <% if(!member) { %>
+        <li style="cursor: pointer">
+          <a href="/admin/signup">
+             <span></span>
+             <span></span>
+             <span></span>
+             <span></span>
+            SIGNUP</a>
+        </li>
+        <li style="cursor: pointer">
+          <a  href="/admin/login">
+           <span></span>
+           <span></span>
+           <span></span>
+           <span></span>
+          LOGIN</a>
+        </li>
+        <% } else { %>
+        <li class="nav-item" style="cursor: pointer">
+          <a class="nav-link" href="/admin/product/all">Menu</a>
+        </li>
+        <li class="nav-item" style="cursor: pointer">
+          <a class="nav-link" href="/admin/user/all">Users</a>
+        </li>
+        <li
+          class="nav-item"
+          style="cursor: pointer"
+          onclick="return confirm('Do you want to logout?')"
+        >
+          <a class="nav-link" href="/admin/logout">Logout</a>
+        </li>
+        <% } %>
+   
+
     
-  </body>
-  <%- include('includes/footer') %>
+  
+
+  <script type="text/javascript" src="/js/home.js"></script>
+</body>
+
+<%- include('includes/footer') %>

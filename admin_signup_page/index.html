@@ -1,20 +1,18 @@
-<%- include('includes/header') %>
-
-<link rel="stylesheet" type="text/css" href="/css/signup.css" />
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
+    
+</head>
 <body>
-  <div class="wrapper">
-    <form action="/admin/signup" method="POST" enctype="multipart/form-data">
-          <h1>Admin Signup</h1>
-          <div>Go back <a href="/admin" style="color: peru">Home</a></div>
-          <p>
-            Already signed up?
-            <a href="/admin/login" style="color: peru">Login</a>
-          </p>
-       
-
-        <div class="input-box">
+    <div class="wrapper">
+        <form action="">
+            <h1>Admin Signup</h1>
+            <div class="input-box">
                 <input type="text" placeholder="Username" 
                 required>
                 <i class='bx bxs-user'></i>
@@ -41,12 +39,13 @@
             </div>
             <button type="submit" class="btn">Signup</button>
             </div>
+            
 
-      </div>
-    </form>
-  </div>
+                
+            </div>
 
-  <script type="text/javascript" src="/js/signup.js"></script>
+        </form>
+    </div>
+    
 </body>
-
-<%- include('includes/footer') %>
+</html>
