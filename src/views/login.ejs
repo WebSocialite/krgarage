@@ -5,29 +5,39 @@
     
 
 <body>
-  <div class="wrapper">
-  <form action="/admin/login" METHOD="POST">
+  
+  <form class="wrapper" action="/admin/login" METHOD="POST">
         <h1>Admin Login</h1>
          <p>
           Don't you have an account?
           <a href="/admin/signup" style="color: peru">Signup</a>
         </p>
       <div class="input-box">
-        <input type="text" placeholder="Username" 
-        required>
+        <input 
+        type="text"
+        name="memberNick"
+        class="member-nick"
+        placeholder="Username"
+        value=""
+        required
+        />
         <i class='bx bxs-user'></i>
       </div>
     <div class="input-box">
-        <input type="password"
-        placeholder="Password" required>
+        <input 
+        type="password"
+        name="memberPassword"
+        class="member-password"
+        placeholder="Password"
+        value=""
+        required
+        />
         <i class='bx bxs-lock-alt'></i>
     </div>
-    <button class="btn" type="submit">Login</button>
-      </div>
+    <button class="btn" name="login" type="submit">Login</button>
       
-    </div>
+      
   </form>
-</div>
 </body>
 
 <%- include('includes/footer') %>

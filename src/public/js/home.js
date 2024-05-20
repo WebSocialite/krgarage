@@ -1,4 +1,4 @@
-// console.log("Home frontend javascript file");
+console.log("Home frontend javascript file");
 
 // function fitElementToParent(el, padding) {
 //   let timeout = null;
